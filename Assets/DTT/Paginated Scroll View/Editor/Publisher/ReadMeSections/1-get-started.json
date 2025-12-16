@@ -1,0 +1,11 @@
+﻿{
+  "title": "Paginated Scroll View: get started quickly",
+  "text": "[Want to dive deeper? Take a look at our documentation:][l]",
+  "links": [
+    {
+      "text": "Open documentation",
+      "url": "Documentation.pdf",
+      "inline": false
+    }
+  ]
+}

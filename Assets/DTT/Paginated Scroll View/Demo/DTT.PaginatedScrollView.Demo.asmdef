@@ -1,0 +1,16 @@
+{
+    "name": "DTT.PaginatedScrollView.Demo",
+    "rootNamespace": "",
+    "references": [
+        "GUID:517c1fc0bbc389843bb0e98855e56e20"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
