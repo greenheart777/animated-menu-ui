@@ -2038,6 +2038,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2726134477875051698, guid: ac8f5b7371af0684dafd77bc3adb3652, type: 3}
+      propertyPath: pageToOpen
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3717120776095521093, guid: ac8f5b7371af0684dafd77bc3adb3652, type: 3}
       propertyPath: m_Name
       value: Button (Back)
