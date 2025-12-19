@@ -3,9 +3,11 @@ namespace SimpleAnimatedUI
 {
     public enum PageEnum
     {
+        Main,
         AboutProject,
         Hotel,
         Infrastructure,
+        PrivateResidences,
         MainBuilding,
         Rooms,
         Rooms_Standard,
@@ -25,7 +27,6 @@ namespace SimpleAnimatedUI
         KidsClub,
         Embankment,
         Boutiques,
-        HuntingGrounds,
-        PrivateResidences
+        HuntingGrounds
     } 
 }
