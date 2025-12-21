@@ -219,6 +219,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Button (Back)
       objectReference: {fileID: 0}
+    - target: {fileID: 6939955288746917464, guid: d1b151138df662b4c8022bfde87d492d, type: 3}
+      propertyPath: m_Maskable
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8334251260132155635, guid: d1b151138df662b4c8022bfde87d492d, type: 3}
       propertyPath: m_SizeDelta.x
       value: -48.80002

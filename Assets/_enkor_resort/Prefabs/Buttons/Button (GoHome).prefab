@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3401898625326819130}
   - component: {fileID: 2444331497231274172}
   - component: {fileID: 5564181992289983457}
+  - component: {fileID: 1847165101767450458}
   m_Layer: 5
   m_Name: Image (1)
   m_TagString: Untagged
@@ -75,6 +76,29 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &1847165101767450458
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2459775385673716248}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a09289715db6ad4a93d404ab7c5817b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SimpleAnimatedUI.ImageAnimator
+  targetImage: {fileID: 5564181992289983457}
+  inStartAlpha: 0
+  inEndAlpha: 1
+  inFadeDuration: 1
+  inFadeEase: 2
+  inDelay: 0
+  outStartAlpha: 1
+  outEndAlpha: 0
+  outFadeDuration: 1
+  outFadeEase: 3
+  outDelay: 0
 --- !u!1 &8753473461359582419
 GameObject:
   m_ObjectHideFlags: 0
@@ -86,6 +110,7 @@ GameObject:
   - component: {fileID: 3876191609834530335}
   - component: {fileID: 6661891368499742398}
   - component: {fileID: 2701630737919847929}
+  - component: {fileID: 3327127523199946503}
   m_Layer: 5
   m_Name: Image
   m_TagString: Untagged
@@ -150,6 +175,29 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &3327127523199946503
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8753473461359582419}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a09289715db6ad4a93d404ab7c5817b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SimpleAnimatedUI.ImageAnimator
+  targetImage: {fileID: 2701630737919847929}
+  inStartAlpha: 0
+  inEndAlpha: 1
+  inFadeDuration: 1
+  inFadeEase: 2
+  inDelay: 0
+  outStartAlpha: 1
+  outEndAlpha: 0
+  outFadeDuration: 1
+  outFadeEase: 3
+  outDelay: 0
 --- !u!1001 &5166058716819644623
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -181,18 +229,18 @@ PrefabInstance:
     - target: {fileID: 4493108508571282190, guid: d1b151138df662b4c8022bfde87d492d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 8785183024639986625}
+      objectReference: {fileID: 3700087781745292325}
     - target: {fileID: 4493108508571282190, guid: d1b151138df662b4c8022bfde87d492d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4493108508571282190, guid: d1b151138df662b4c8022bfde87d492d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Select
+      value: Open
       objectReference: {fileID: 0}
     - target: {fileID: 4493108508571282190, guid: d1b151138df662b4c8022bfde87d492d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: UnityEngine.UI.Button, UnityEngine.UI
+      value: SimpleAnimatedUI.OpenPageButton, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 4493108508571282190, guid: d1b151138df662b4c8022bfde87d492d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -328,14 +376,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SimpleAnimatedUI.OpenPageButton
   pageToOpen: 0
---- !u!114 &8785183024639986625 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4493108508571282190, guid: d1b151138df662b4c8022bfde87d492d, type: 3}
-  m_PrefabInstance: {fileID: 5166058716819644623}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2057483516899580829}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button

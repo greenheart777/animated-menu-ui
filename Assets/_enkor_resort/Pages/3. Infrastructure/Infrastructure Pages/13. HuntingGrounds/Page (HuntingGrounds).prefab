@@ -1634,6 +1634,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: 400.7
       objectReference: {fileID: 0}
+    - target: {fileID: 7124728060241586246, guid: 4c5eed72329802c4db8deb2b9b9b02c1, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -306.3
+      objectReference: {fileID: 0}
     - target: {fileID: 7127672247691679509, guid: 4c5eed72329802c4db8deb2b9b9b02c1, type: 3}
       propertyPath: m_Name
       value: Photo (0)
