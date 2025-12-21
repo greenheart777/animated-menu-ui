@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5235185966421128719}
   - component: {fileID: 6343581928038297235}
   - component: {fileID: 1222453870558924558}
+  - component: {fileID: 6146564072117981117}
   m_Layer: 5
   m_Name: Text (TMP) (4)
   m_TagString: Untagged
@@ -137,6 +138,30 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &6146564072117981117
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 431509402137001025}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed2d77a5721c4cc49a6a5fb275c21c2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SimpleAnimatedUI.TextAnimator
+  targetText: {fileID: 1222453870558924558}
+  inStartAlpha: 0
+  inEndAlpha: 1
+  inFadeDuration: 1.2
+  inFadeEase: 2
+  inDelay: 0.2
+  playOnEnable: 0
+  outStartAlpha: 1
+  outEndAlpha: 0
+  outFadeDuration: 1
+  outFadeEase: 2
+  outDelay: 0
 --- !u!1 &6626605534649025941
 GameObject:
   m_ObjectHideFlags: 0
@@ -148,6 +173,7 @@ GameObject:
   - component: {fileID: 6948989411699495512}
   - component: {fileID: 1199797365735026420}
   - component: {fileID: 8488187119168035717}
+  - component: {fileID: 2295896578826805202}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -283,6 +309,30 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &2295896578826805202
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6626605534649025941}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed2d77a5721c4cc49a6a5fb275c21c2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SimpleAnimatedUI.TextAnimator
+  targetText: {fileID: 8488187119168035717}
+  inStartAlpha: 0
+  inEndAlpha: 1
+  inFadeDuration: 1
+  inFadeEase: 2
+  inDelay: 0.5
+  playOnEnable: 0
+  outStartAlpha: 1
+  outEndAlpha: 0
+  outFadeDuration: 1
+  outFadeEase: 2
+  outDelay: 0
 --- !u!1001 &176092401284735024
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -380,10 +430,10 @@ PrefabInstance:
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 3419684407442800298, guid: a2eafba2c16783d44a54d78d4818b42c, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 6948989411699495512}
+      addedObject: {fileID: 5235185966421128719}
     - targetCorrespondingSourceObject: {fileID: 3419684407442800298, guid: a2eafba2c16783d44a54d78d4818b42c, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 5235185966421128719}
+      addedObject: {fileID: 6948989411699495512}
     - targetCorrespondingSourceObject: {fileID: 3419684407442800298, guid: a2eafba2c16783d44a54d78d4818b42c, type: 3}
       insertIndex: -1
       addedObject: {fileID: 6335125129723718519}
@@ -411,6 +461,10 @@ PrefabInstance:
     - target: {fileID: 641288394426719311, guid: ac8f5b7371af0684dafd77bc3adb3652, type: 3}
       propertyPath: m_Material
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1049486226842159836, guid: ac8f5b7371af0684dafd77bc3adb3652, type: 3}
+      propertyPath: pageToOpen
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1172914171162455757, guid: ac8f5b7371af0684dafd77bc3adb3652, type: 3}
       propertyPath: m_text

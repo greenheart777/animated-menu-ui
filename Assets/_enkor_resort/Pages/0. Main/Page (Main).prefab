@@ -75,121 +75,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!1 &8168207000738770610
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1260993466773854573}
-  - component: {fileID: 2932777188392303562}
-  - component: {fileID: 1836324293595734724}
-  - component: {fileID: 4429280060476626859}
-  m_Layer: 5
-  m_Name: Line
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1260993466773854573
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8168207000738770610}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 7098915669959491519}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 1}
-  m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -117.849976}
-  m_SizeDelta: {x: 1850, y: 2}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!222 &2932777188392303562
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8168207000738770610}
-  m_CullTransparentMesh: 1
---- !u!114 &1836324293595734724
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8168207000738770610}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
-  m_Material: {fileID: 0}
-  m_Color: {r: 0.8352941, g: 0.81960785, b: 0.79607844, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!114 &4429280060476626859
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8168207000738770610}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3eab7827b58c86541824bf3549e62f23, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SimpleAnimatedUI.RectAnimator
-  targetRectTransform: {fileID: 1260993466773854573}
-  animatePosition: 0
-  inStartPosition: {x: 0, y: 0}
-  inEndPosition: {x: 0, y: 0}
-  inMoveDuration: 1
-  inMoveEase: 2
-  inDelay: 0
-  outStartPosition: {x: 0, y: 0}
-  outEndPosition: {x: 0, y: 0}
-  outMoveDuration: 1
-  outMoveEase: 2
-  outDelay: 0
-  animateSize: 0
-  inStartSize: {x: 100, y: 100}
-  inEndSize: {x: 100, y: 100}
-  inSizeDuration: 1
-  inSizeEase: 2
-  inSizeDelay: 0
-  outStartSize: {x: 100, y: 100}
-  outEndSize: {x: 100, y: 100}
-  outSizeDuration: 1
-  outSizeEase: 2
-  outSizeDelay: 0
-  useAnchoredPosition: 1
-  resetPositionOnAwake: 1
-  resetSizeOnAwake: 1
-  animationMode: 3
 --- !u!1001 &3066902801593998415
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -278,6 +163,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6290132388121916717, guid: 4c5eed72329802c4db8deb2b9b9b02c1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7127672247691679509, guid: 4c5eed72329802c4db8deb2b9b9b02c1, type: 3}
       propertyPath: m_Name
       value: Photo (0)
@@ -292,60 +181,13 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3660493024882700662, guid: 4c5eed72329802c4db8deb2b9b9b02c1, type: 3}
       insertIndex: -1
       addedObject: {fileID: 4571023948555353303}
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 7127672247691679509, guid: 4c5eed72329802c4db8deb2b9b9b02c1, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 6853444114942942798}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4c5eed72329802c4db8deb2b9b9b02c1, type: 3}
 --- !u!224 &1748378357223173433 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3660493024882700662, guid: 4c5eed72329802c4db8deb2b9b9b02c1, type: 3}
   m_PrefabInstance: {fileID: 3066902801593998415}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &5216654893162138458 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7127672247691679509, guid: 4c5eed72329802c4db8deb2b9b9b02c1, type: 3}
-  m_PrefabInstance: {fileID: 3066902801593998415}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &6853444114942942798
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5216654893162138458}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3eab7827b58c86541824bf3549e62f23, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SimpleAnimatedUI.RectAnimator
-  targetRectTransform: {fileID: 1748378357223173433}
-  animatePosition: 1
-  inStartPosition: {x: 393.8, y: -40}
-  inEndPosition: {x: -423.5, y: -40}
-  inMoveDuration: 1
-  inMoveEase: 2
-  inDelay: 0
-  outStartPosition: {x: 0, y: 0}
-  outEndPosition: {x: 0, y: 0}
-  outMoveDuration: 1
-  outMoveEase: 2
-  outDelay: 0
-  animateSize: 0
-  inStartSize: {x: 100, y: 100}
-  inEndSize: {x: 100, y: 100}
-  inSizeDuration: 1
-  inSizeEase: 2
-  inSizeDelay: 0
-  outStartSize: {x: 100, y: 100}
-  outEndSize: {x: 100, y: 100}
-  outSizeDuration: 1
-  outSizeEase: 2
-  outSizeDelay: 0
-  useAnchoredPosition: 1
-  resetPositionOnAwake: 1
-  resetSizeOnAwake: 1
-  animationMode: 2
 --- !u!1001 &5616343778868740373
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -441,9 +283,6 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 3419684407442800298, guid: a2eafba2c16783d44a54d78d4818b42c, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1260993466773854573}
     - targetCorrespondingSourceObject: {fileID: 3419684407442800298, guid: a2eafba2c16783d44a54d78d4818b42c, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1748378357223173433}

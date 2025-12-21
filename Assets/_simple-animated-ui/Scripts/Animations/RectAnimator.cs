@@ -25,47 +25,37 @@ namespace SimpleAnimatedUI
         [SerializeField] private Vector2 outStartPosition = Vector2.zero;
         [SerializeField] private Vector2 outEndPosition = Vector2.zero;
         [Range(0f, 10f), SerializeField] private float outMoveDuration = 1f;
-        [SerializeField] private Ease outMoveEase = Ease.InSine;
+        [SerializeField] private Ease outMoveEase = Ease.OutSine;
         [SerializeField] private float outDelay = 0f;
 
-        [Header("Size Animation")]
-        [SerializeField] private bool animateSize = false;
+        [Space]
+        [Header("Scale Animation")]
+        [SerializeField] private bool animateScale = false;
 
         [Space]
-        [Header("In Size Options")]
-        [SerializeField] private Vector2 inStartSize = Vector2.one * 100f;
-        [SerializeField] private Vector2 inEndSize = Vector2.one * 100f;
-        [Range(0f, 10f), SerializeField] private float inSizeDuration = 1f;
-        [SerializeField] private Ease inSizeEase = Ease.InSine;
-        [SerializeField] private float inSizeDelay = 0f;
+        [Header("In Scale Options")]
+        [SerializeField] private Vector3 inStartScale = Vector3.one;
+        [SerializeField] private Vector3 inEndScale = Vector3.one;
+        [Range(0f, 10f), SerializeField] private float inScaleDuration = 1f;
+        [SerializeField] private Ease inScaleEase = Ease.InSine;
+        [SerializeField] private float inScaleDelay = 0f;
 
         [Space]
-        [Header("Out Size Options")]
-        [SerializeField] private Vector2 outStartSize = Vector2.one * 100f;
-        [SerializeField] private Vector2 outEndSize = Vector2.one * 100f;
-        [Range(0f, 10f), SerializeField] private float outSizeDuration = 1f;
-        [SerializeField] private Ease outSizeEase = Ease.InSine;
-        [SerializeField] private float outSizeDelay = 0f;
+        [Header("Out Scale Options")]
+        [SerializeField] private Vector3 outStartScale = Vector3.one;
+        [SerializeField] private Vector3 outEndScale = Vector3.one;
+        [Range(0f, 10f), SerializeField] private float outScaleDuration = 1f;
+        [SerializeField] private Ease outScaleEase = Ease.OutSine;
+        [SerializeField] private float outScaleDelay = 0f;
 
         [Header("Anchor Settings")]
         [SerializeField] private bool useAnchoredPosition = true;
         [SerializeField] private bool resetPositionOnAwake = true;
-        [SerializeField] private bool resetSizeOnAwake = true;
-
-        [Header("Animation Mode")]
-        [SerializeField] private AnimationMode animationMode = AnimationMode.Sequential;
+        [SerializeField] private bool resetScaleOnAwake = true;
 
         private Tween currentTween;
         private Vector2 originalPosition;
-        private Vector2 originalSize;
-
-        public enum AnimationMode
-        {
-            Sequential,     // Позиция и размер анимируются последовательно
-            Parallel,       // Позиция и размер анимируются одновременно
-            PositionOnly,   // Только позиция
-            SizeOnly        // Только размер
-        }
+        private Vector3 originalScale;
 
         private void Awake()
         {
@@ -78,16 +68,16 @@ namespace SimpleAnimatedUI
                 targetRectTransform.anchoredPosition :
                 targetRectTransform.localPosition;
 
-            originalSize = targetRectTransform.sizeDelta;
+            originalScale = targetRectTransform.localScale;
 
             if (resetPositionOnAwake)
             {
                 ResetToOriginalPosition();
             }
 
-            if (resetSizeOnAwake)
+            if (resetScaleOnAwake)
             {
-                ResetToOriginalSize();
+                ResetToOriginalScale();
             }
         }
 
@@ -104,49 +94,66 @@ namespace SimpleAnimatedUI
                 currentTween.Kill();
             }
 
-            // Устанавливаем начальные значения
             if (animatePosition)
             {
                 SetRectPosition(inStartPosition);
             }
 
-            if (animateSize)
+            if (animateScale)
             {
-                SetRectSize(inStartSize);
+                SetRectScale(inStartScale);
             }
 
             Sequence sequence = DOTween.Sequence();
 
-            // Добавляем задержку для позиции
             if (inDelay > 0)
             {
                 sequence.AppendInterval(inDelay);
             }
 
-            // Определяем режим анимации
-            switch (animationMode)
+            Sequence parallelSequence = DOTween.Sequence();
+
+            // Анимация позиции (если включена)
+            if (animatePosition)
             {
-                case AnimationMode.Sequential:
-                    AddSequentialAnimation(sequence, true);
-                    break;
+                Tween posTween = CreatePositionTween(true);
 
-                case AnimationMode.Parallel:
-                    AddParallelAnimation(sequence, true);
-                    break;
+                if (inDelay > 0)
+                {
+                    parallelSequence.Join(
+                        DOTween.Sequence()
+                            .AppendInterval(inDelay)
+                            .Append(posTween)
+                    );
+                }
+                else
+                {
+                    parallelSequence.Join(posTween);
+                }
+            }
 
-                case AnimationMode.PositionOnly:
-                    if (animatePosition)
-                    {
-                        AddPositionAnimation(sequence, true);
-                    }
-                    break;
+            if (animateScale)
+            {
+                Tween scaleTween = CreateScaleTween(true);
 
-                case AnimationMode.SizeOnly:
-                    if (animateSize)
-                    {
-                        AddSizeAnimation(sequence, true);
-                    }
-                    break;
+                float scaleDelay = inScaleDelay;
+                if (scaleDelay > 0)
+                {
+                    parallelSequence.Join(
+                        DOTween.Sequence()
+                            .AppendInterval(scaleDelay)
+                            .Append(scaleTween)
+                    );
+                }
+                else
+                {
+                    parallelSequence.Join(scaleTween);
+                }
+            }
+
+            if (animatePosition || animateScale)
+            {
+                sequence.Append(parallelSequence);
             }
 
             currentTween = sequence;
@@ -166,49 +173,65 @@ namespace SimpleAnimatedUI
                 currentTween.Kill();
             }
 
-            // Устанавливаем начальные значения
             if (animatePosition)
             {
                 SetRectPosition(outStartPosition);
             }
 
-            if (animateSize)
+            if (animateScale)
             {
-                SetRectSize(outStartSize);
+                SetRectScale(outStartScale);
             }
 
             Sequence sequence = DOTween.Sequence();
 
-            // Добавляем задержку для позиции
             if (outDelay > 0)
             {
                 sequence.AppendInterval(outDelay);
             }
 
-            // Определяем режим анимации
-            switch (animationMode)
+            Sequence parallelSequence = DOTween.Sequence();
+
+            if (animatePosition)
             {
-                case AnimationMode.Sequential:
-                    AddSequentialAnimation(sequence, false);
-                    break;
+                Tween posTween = CreatePositionTween(false);
 
-                case AnimationMode.Parallel:
-                    AddParallelAnimation(sequence, false);
-                    break;
+                if (outDelay > 0)
+                {
+                    parallelSequence.Join(
+                        DOTween.Sequence()
+                            .AppendInterval(outDelay)
+                            .Append(posTween)
+                    );
+                }
+                else
+                {
+                    parallelSequence.Join(posTween);
+                }
+            }
 
-                case AnimationMode.PositionOnly:
-                    if (animatePosition)
-                    {
-                        AddPositionAnimation(sequence, false);
-                    }
-                    break;
+            if (animateScale)
+            {
+                Tween scaleTween = CreateScaleTween(false);
 
-                case AnimationMode.SizeOnly:
-                    if (animateSize)
-                    {
-                        AddSizeAnimation(sequence, false);
-                    }
-                    break;
+                float scaleDelay = outScaleDelay;
+                if (scaleDelay > 0)
+                {
+                    parallelSequence.Join(
+                        DOTween.Sequence()
+                            .AppendInterval(scaleDelay)
+                            .Append(scaleTween)
+                    );
+                }
+                else
+                {
+                    parallelSequence.Join(scaleTween);
+                }
+            }
+
+            if (animatePosition || animateScale)
+            {
+                sequence.Append(parallelSequence);
             }
 
             currentTween = sequence;
@@ -225,74 +248,6 @@ namespace SimpleAnimatedUI
         }
 
         #region Helper Methods
-        private void AddSequentialAnimation(Sequence sequence, bool isInAnimation)
-        {
-            if (animatePosition)
-            {
-                AddPositionAnimation(sequence, isInAnimation);
-            }
-
-            if (animateSize)
-            {
-                // Добавляем задержку для размера если нужно
-                if (isInAnimation && inSizeDelay > 0)
-                {
-                    sequence.AppendInterval(inSizeDelay);
-                }
-                else if (!isInAnimation && outSizeDelay > 0)
-                {
-                    sequence.AppendInterval(outSizeDelay);
-                }
-
-                AddSizeAnimation(sequence, isInAnimation);
-            }
-        }
-
-        private void AddParallelAnimation(Sequence sequence, bool isInAnimation)
-        {
-            Sequence parallelSequence = DOTween.Sequence();
-
-            if (animatePosition)
-            {
-                Tween posTween = CreatePositionTween(isInAnimation);
-                parallelSequence.Join(posTween);
-            }
-
-            if (animateSize)
-            {
-                Tween sizeTween = CreateSizeTween(isInAnimation);
-
-                // Добавляем задержку для размера если нужно
-                float sizeDelay = isInAnimation ? inSizeDelay : outSizeDelay;
-                if (sizeDelay > 0)
-                {
-                    parallelSequence.Join(
-                        DOTween.Sequence()
-                            .AppendInterval(sizeDelay)
-                            .Append(sizeTween)
-                    );
-                }
-                else
-                {
-                    parallelSequence.Join(sizeTween);
-                }
-            }
-
-            sequence.Append(parallelSequence);
-        }
-
-        private void AddPositionAnimation(Sequence sequence, bool isInAnimation)
-        {
-            Tween posTween = CreatePositionTween(isInAnimation);
-            sequence.Append(posTween);
-        }
-
-        private void AddSizeAnimation(Sequence sequence, bool isInAnimation)
-        {
-            Tween sizeTween = CreateSizeTween(isInAnimation);
-            sequence.Append(sizeTween);
-        }
-
         private Tween CreatePositionTween(bool isInAnimation)
         {
             Vector2 targetPos = isInAnimation ? inEndPosition : outEndPosition;
@@ -304,13 +259,13 @@ namespace SimpleAnimatedUI
                 targetRectTransform.DOLocalMove(targetPos, duration).SetEase(ease);
         }
 
-        private Tween CreateSizeTween(bool isInAnimation)
+        private Tween CreateScaleTween(bool isInAnimation)
         {
-            Vector2 targetSize = isInAnimation ? inEndSize : outEndSize;
-            float duration = isInAnimation ? inSizeDuration : outSizeDuration;
-            Ease ease = isInAnimation ? inSizeEase : outSizeEase;
+            Vector3 targetScale = isInAnimation ? inEndScale : outEndScale;
+            float duration = isInAnimation ? inScaleDuration : outScaleDuration;
+            Ease ease = isInAnimation ? inScaleEase : outScaleEase;
 
-            return targetRectTransform.DOSizeDelta(targetSize, duration).SetEase(ease);
+            return targetRectTransform.DOScale(targetScale, duration).SetEase(ease);
         }
 
         private void SetRectPosition(Vector2 position)
@@ -325,9 +280,9 @@ namespace SimpleAnimatedUI
             }
         }
 
-        private void SetRectSize(Vector2 size)
+        private void SetRectScale(Vector3 scale)
         {
-            targetRectTransform.sizeDelta = size;
+            targetRectTransform.localScale = scale;
         }
         #endregion
 
@@ -337,15 +292,15 @@ namespace SimpleAnimatedUI
             SetRectPosition(originalPosition);
         }
 
-        public void ResetToOriginalSize()
+        public void ResetToOriginalScale()
         {
-            SetRectSize(originalSize);
+            SetRectScale(originalScale);
         }
 
         public void ResetToOriginal()
         {
             ResetToOriginalPosition();
-            ResetToOriginalSize();
+            ResetToOriginalScale();
         }
 
         public void SaveCurrentPositionAsOriginal()
@@ -355,15 +310,15 @@ namespace SimpleAnimatedUI
                 targetRectTransform.localPosition;
         }
 
-        public void SaveCurrentSizeAsOriginal()
+        public void SaveCurrentScaleAsOriginal()
         {
-            originalSize = targetRectTransform.sizeDelta;
+            originalScale = targetRectTransform.localScale;
         }
 
         public void SaveCurrentAsOriginal()
         {
             SaveCurrentPositionAsOriginal();
-            SaveCurrentSizeAsOriginal();
+            SaveCurrentScaleAsOriginal();
         }
 
         public void SetPositionImmediately(Vector2 position)
@@ -372,10 +327,10 @@ namespace SimpleAnimatedUI
             SetRectPosition(position);
         }
 
-        public void SetSizeImmediately(Vector2 size)
+        public void SetScaleImmediately(Vector3 scale)
         {
             KillAnimation();
-            SetRectSize(size);
+            SetRectScale(scale);
         }
 
         public void SetInPositions(Vector2 startPos, Vector2 endPos)
@@ -390,16 +345,16 @@ namespace SimpleAnimatedUI
             outEndPosition = endPos;
         }
 
-        public void SetInSizes(Vector2 startSize, Vector2 endSize)
+        public void SetInScales(Vector3 startScale, Vector3 endScale)
         {
-            inStartSize = startSize;
-            inEndSize = endSize;
+            inStartScale = startScale;
+            inEndScale = endScale;
         }
 
-        public void SetOutSizes(Vector2 startSize, Vector2 endSize)
+        public void SetOutScales(Vector3 startScale, Vector3 endScale)
         {
-            outStartSize = startSize;
-            outEndSize = endSize;
+            outStartScale = startScale;
+            outEndScale = endScale;
         }
 
         public void SetAllPositions(Vector2 inStart, Vector2 inEnd, Vector2 outStart, Vector2 outEnd)
@@ -410,12 +365,12 @@ namespace SimpleAnimatedUI
             outEndPosition = outEnd;
         }
 
-        public void SetAllSizes(Vector2 inStart, Vector2 inEnd, Vector2 outStart, Vector2 outEnd)
+        public void SetAllScales(Vector3 inStart, Vector3 inEnd, Vector3 outStart, Vector3 outEnd)
         {
-            inStartSize = inStart;
-            inEndSize = inEnd;
-            outStartSize = outStart;
-            outEndSize = outEnd;
+            inStartScale = inStart;
+            inEndScale = inEnd;
+            outStartScale = outStart;
+            outEndScale = outEnd;
         }
 
         public void EnablePositionAnimation(bool enable)
@@ -423,38 +378,32 @@ namespace SimpleAnimatedUI
             animatePosition = enable;
         }
 
-        public void EnableSizeAnimation(bool enable)
+        public void EnableScaleAnimation(bool enable)
         {
-            animateSize = enable;
+            animateScale = enable;
         }
 
-        public void SetAnimationMode(AnimationMode mode)
+        public void SetInScaleUniform(float startScale, float endScale)
         {
-            animationMode = mode;
+            inStartScale = Vector3.one * startScale;
+            inEndScale = Vector3.one * endScale;
+        }
+
+        public void SetOutScaleUniform(float startScale, float endScale)
+        {
+            outStartScale = Vector3.one * startScale;
+            outEndScale = Vector3.one * endScale;
+        }
+
+        public void SetScaleUniform(float scale)
+        {
+            SetScaleImmediately(Vector3.one * scale);
+        }
+
+        public bool HasActiveAnimations()
+        {
+            return animatePosition || animateScale;
         }
         #endregion
-
-#if UNITY_EDITOR
-        private void OnValidate()
-        {
-            if (targetRectTransform == null)
-            {
-                targetRectTransform = GetComponent<RectTransform>();
-            }
-
-            if (!animatePosition && !animateSize)
-            {
-                Debug.LogWarning("[RectAnimator] Both position and size animations are disabled!");
-            }
-            else if (!animatePosition && animateSize)
-            {
-                animationMode = AnimationMode.SizeOnly;
-            }
-            else if (animatePosition && !animateSize)
-            {
-                animationMode = AnimationMode.PositionOnly;
-            }
-        }
-#endif
     }
 }

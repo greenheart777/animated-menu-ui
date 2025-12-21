@@ -81,6 +81,7 @@ GameObject:
   - component: {fileID: 3099427692683892395}
   - component: {fileID: 2198412516420427027}
   - component: {fileID: 520430751447180416}
+  - component: {fileID: 2807479997574606112}
   m_Layer: 5
   m_Name: Text (TMP) (4)
   m_TagString: Untagged
@@ -206,6 +207,30 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &2807479997574606112
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6943268106910937656}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed2d77a5721c4cc49a6a5fb275c21c2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SimpleAnimatedUI.TextAnimator
+  targetText: {fileID: 520430751447180416}
+  inStartAlpha: 0
+  inEndAlpha: 1
+  inFadeDuration: 1.2
+  inFadeEase: 2
+  inDelay: 0.2
+  playOnEnable: 0
+  outStartAlpha: 1
+  outEndAlpha: 0
+  outFadeDuration: 1
+  outFadeEase: 2
+  outDelay: 0
 --- !u!1001 &24062957126277049
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -217,6 +242,10 @@ PrefabInstance:
     - target: {fileID: 3414374441582635522, guid: d1b151138df662b4c8022bfde87d492d, type: 3}
       propertyPath: m_Material
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4386347304776073290, guid: d1b151138df662b4c8022bfde87d492d, type: 3}
+      propertyPath: inDelay
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 4493108508571282190, guid: d1b151138df662b4c8022bfde87d492d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -326,6 +355,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5960894483950643182, guid: d1b151138df662b4c8022bfde87d492d, type: 3}
+      propertyPath: inDelay
+      value: 0.6
+      objectReference: {fileID: 0}
     - target: {fileID: 6574166199588698962, guid: d1b151138df662b4c8022bfde87d492d, type: 3}
       propertyPath: m_Name
       value: Button (8)
@@ -364,7 +397,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11c62894345edcd46bbf4f9624b57498, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SimpleAnimatedUI.OpenPageButton
-  pageToOpen: 18
+  pageToOpen: 20
 --- !u!1001 &651929222221450599
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -376,6 +409,10 @@ PrefabInstance:
     - target: {fileID: 3414374441582635522, guid: d1b151138df662b4c8022bfde87d492d, type: 3}
       propertyPath: m_Material
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4386347304776073290, guid: d1b151138df662b4c8022bfde87d492d, type: 3}
+      propertyPath: inDelay
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 4493108508571282190, guid: d1b151138df662b4c8022bfde87d492d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -485,6 +522,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5960894483950643182, guid: d1b151138df662b4c8022bfde87d492d, type: 3}
+      propertyPath: inDelay
+      value: 0.6
+      objectReference: {fileID: 0}
     - target: {fileID: 6574166199588698962, guid: d1b151138df662b4c8022bfde87d492d, type: 3}
       propertyPath: m_Name
       value: Button (6)
@@ -523,7 +564,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11c62894345edcd46bbf4f9624b57498, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SimpleAnimatedUI.OpenPageButton
-  pageToOpen: 16
+  pageToOpen: 18
 --- !u!1001 &800274545061057782
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -535,6 +576,10 @@ PrefabInstance:
     - target: {fileID: 3414374441582635522, guid: d1b151138df662b4c8022bfde87d492d, type: 3}
       propertyPath: m_Material
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4386347304776073290, guid: d1b151138df662b4c8022bfde87d492d, type: 3}
+      propertyPath: inDelay
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 4493108508571282190, guid: d1b151138df662b4c8022bfde87d492d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -644,6 +689,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5960894483950643182, guid: d1b151138df662b4c8022bfde87d492d, type: 3}
+      propertyPath: inDelay
+      value: 0.6
+      objectReference: {fileID: 0}
     - target: {fileID: 6574166199588698962, guid: d1b151138df662b4c8022bfde87d492d, type: 3}
       propertyPath: m_Name
       value: Button (9)
@@ -682,7 +731,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11c62894345edcd46bbf4f9624b57498, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SimpleAnimatedUI.OpenPageButton
-  pageToOpen: 19
+  pageToOpen: 21
 --- !u!1001 &861402232658431620
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -694,6 +743,10 @@ PrefabInstance:
     - target: {fileID: 3414374441582635522, guid: d1b151138df662b4c8022bfde87d492d, type: 3}
       propertyPath: m_Material
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4386347304776073290, guid: d1b151138df662b4c8022bfde87d492d, type: 3}
+      propertyPath: inDelay
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 4493108508571282190, guid: d1b151138df662b4c8022bfde87d492d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -803,6 +856,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5960894483950643182, guid: d1b151138df662b4c8022bfde87d492d, type: 3}
+      propertyPath: inDelay
+      value: 0.4
+      objectReference: {fileID: 0}
     - target: {fileID: 6574166199588698962, guid: d1b151138df662b4c8022bfde87d492d, type: 3}
       propertyPath: m_Name
       value: Button (0)
@@ -841,7 +898,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11c62894345edcd46bbf4f9624b57498, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SimpleAnimatedUI.OpenPageButton
-  pageToOpen: 11
+  pageToOpen: 13
 --- !u!1001 &1997918976738391228
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -853,6 +910,10 @@ PrefabInstance:
     - target: {fileID: 3414374441582635522, guid: d1b151138df662b4c8022bfde87d492d, type: 3}
       propertyPath: m_Material
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4386347304776073290, guid: d1b151138df662b4c8022bfde87d492d, type: 3}
+      propertyPath: inDelay
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 4493108508571282190, guid: d1b151138df662b4c8022bfde87d492d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -962,6 +1023,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5960894483950643182, guid: d1b151138df662b4c8022bfde87d492d, type: 3}
+      propertyPath: inDelay
+      value: 0.4
+      objectReference: {fileID: 0}
     - target: {fileID: 6574166199588698962, guid: d1b151138df662b4c8022bfde87d492d, type: 3}
       propertyPath: m_Name
       value: Button (1)
@@ -995,7 +1060,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11c62894345edcd46bbf4f9624b57498, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SimpleAnimatedUI.OpenPageButton
-  pageToOpen: 12
+  pageToOpen: 14
 --- !u!224 &5770689769743987096 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5453739835494941988, guid: d1b151138df662b4c8022bfde87d492d, type: 3}
@@ -1012,6 +1077,10 @@ PrefabInstance:
     - target: {fileID: 3414374441582635522, guid: d1b151138df662b4c8022bfde87d492d, type: 3}
       propertyPath: m_Material
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4386347304776073290, guid: d1b151138df662b4c8022bfde87d492d, type: 3}
+      propertyPath: inDelay
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 4493108508571282190, guid: d1b151138df662b4c8022bfde87d492d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -1121,6 +1190,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5960894483950643182, guid: d1b151138df662b4c8022bfde87d492d, type: 3}
+      propertyPath: inDelay
+      value: 0.4
+      objectReference: {fileID: 0}
     - target: {fileID: 6574166199588698962, guid: d1b151138df662b4c8022bfde87d492d, type: 3}
       propertyPath: m_Name
       value: Button (4)
@@ -1160,7 +1233,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11c62894345edcd46bbf4f9624b57498, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SimpleAnimatedUI.OpenPageButton
-  pageToOpen: 14
+  pageToOpen: 16
 --- !u!1001 &4755034103564754120
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1172,6 +1245,10 @@ PrefabInstance:
     - target: {fileID: 3414374441582635522, guid: d1b151138df662b4c8022bfde87d492d, type: 3}
       propertyPath: m_Material
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4386347304776073290, guid: d1b151138df662b4c8022bfde87d492d, type: 3}
+      propertyPath: inDelay
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 4493108508571282190, guid: d1b151138df662b4c8022bfde87d492d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -1281,6 +1358,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5960894483950643182, guid: d1b151138df662b4c8022bfde87d492d, type: 3}
+      propertyPath: inDelay
+      value: 0.6
+      objectReference: {fileID: 0}
     - target: {fileID: 6574166199588698962, guid: d1b151138df662b4c8022bfde87d492d, type: 3}
       propertyPath: m_Name
       value: Button (5)
@@ -1319,7 +1400,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11c62894345edcd46bbf4f9624b57498, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SimpleAnimatedUI.OpenPageButton
-  pageToOpen: 15
+  pageToOpen: 17
 --- !u!1001 &4922338874872314260
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1331,6 +1412,10 @@ PrefabInstance:
     - target: {fileID: 3414374441582635522, guid: d1b151138df662b4c8022bfde87d492d, type: 3}
       propertyPath: m_Material
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4386347304776073290, guid: d1b151138df662b4c8022bfde87d492d, type: 3}
+      propertyPath: inDelay
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 4493108508571282190, guid: d1b151138df662b4c8022bfde87d492d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -1440,6 +1525,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5960894483950643182, guid: d1b151138df662b4c8022bfde87d492d, type: 3}
+      propertyPath: inDelay
+      value: 0.8
+      objectReference: {fileID: 0}
     - target: {fileID: 6574166199588698962, guid: d1b151138df662b4c8022bfde87d492d, type: 3}
       propertyPath: m_Name
       value: Button (12)
@@ -1478,7 +1567,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11c62894345edcd46bbf4f9624b57498, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SimpleAnimatedUI.OpenPageButton
-  pageToOpen: 22
+  pageToOpen: 24
 --- !u!1001 &5057841474528897894
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1490,6 +1579,10 @@ PrefabInstance:
     - target: {fileID: 3414374441582635522, guid: d1b151138df662b4c8022bfde87d492d, type: 3}
       propertyPath: m_Material
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4386347304776073290, guid: d1b151138df662b4c8022bfde87d492d, type: 3}
+      propertyPath: inDelay
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 4493108508571282190, guid: d1b151138df662b4c8022bfde87d492d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -1599,6 +1692,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5960894483950643182, guid: d1b151138df662b4c8022bfde87d492d, type: 3}
+      propertyPath: inDelay
+      value: 0.8
+      objectReference: {fileID: 0}
     - target: {fileID: 6574166199588698962, guid: d1b151138df662b4c8022bfde87d492d, type: 3}
       propertyPath: m_Name
       value: Button (10)
@@ -1637,7 +1734,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11c62894345edcd46bbf4f9624b57498, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SimpleAnimatedUI.OpenPageButton
-  pageToOpen: 20
+  pageToOpen: 22
 --- !u!1001 &5102817269961061195
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1649,6 +1746,10 @@ PrefabInstance:
     - target: {fileID: 3414374441582635522, guid: d1b151138df662b4c8022bfde87d492d, type: 3}
       propertyPath: m_Material
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4386347304776073290, guid: d1b151138df662b4c8022bfde87d492d, type: 3}
+      propertyPath: inDelay
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 4493108508571282190, guid: d1b151138df662b4c8022bfde87d492d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -1758,6 +1859,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5960894483950643182, guid: d1b151138df662b4c8022bfde87d492d, type: 3}
+      propertyPath: inDelay
+      value: 0.6
+      objectReference: {fileID: 0}
     - target: {fileID: 6574166199588698962, guid: d1b151138df662b4c8022bfde87d492d, type: 3}
       propertyPath: m_Name
       value: Button (7)
@@ -1796,7 +1901,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11c62894345edcd46bbf4f9624b57498, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SimpleAnimatedUI.OpenPageButton
-  pageToOpen: 17
+  pageToOpen: 19
 --- !u!1001 &5778892301420378753
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1966,6 +2071,10 @@ PrefabInstance:
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 4386347304776073290, guid: d1b151138df662b4c8022bfde87d492d, type: 3}
+      propertyPath: inDelay
+      value: 0.8
+      objectReference: {fileID: 0}
     - target: {fileID: 4493108508571282190, guid: d1b151138df662b4c8022bfde87d492d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 1
@@ -2074,6 +2183,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5960894483950643182, guid: d1b151138df662b4c8022bfde87d492d, type: 3}
+      propertyPath: inDelay
+      value: 0.8
+      objectReference: {fileID: 0}
     - target: {fileID: 6574166199588698962, guid: d1b151138df662b4c8022bfde87d492d, type: 3}
       propertyPath: m_Name
       value: Button (11)
@@ -2107,7 +2220,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11c62894345edcd46bbf4f9624b57498, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SimpleAnimatedUI.OpenPageButton
-  pageToOpen: 21
+  pageToOpen: 23
 --- !u!224 &1929024516057656436 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5453739835494941988, guid: d1b151138df662b4c8022bfde87d492d, type: 3}
@@ -2125,9 +2238,13 @@ PrefabInstance:
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 4386347304776073290, guid: d1b151138df662b4c8022bfde87d492d, type: 3}
+      propertyPath: inDelay
+      value: 0.4
+      objectReference: {fileID: 0}
     - target: {fileID: 4493108508571282190, guid: d1b151138df662b4c8022bfde87d492d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4493108508571282190, guid: d1b151138df662b4c8022bfde87d492d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
@@ -2233,6 +2350,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5960894483950643182, guid: d1b151138df662b4c8022bfde87d492d, type: 3}
+      propertyPath: inDelay
+      value: 0.4
+      objectReference: {fileID: 0}
     - target: {fileID: 6574166199588698962, guid: d1b151138df662b4c8022bfde87d492d, type: 3}
       propertyPath: m_Name
       value: Button (3)
@@ -2267,7 +2388,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11c62894345edcd46bbf4f9624b57498, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SimpleAnimatedUI.OpenPageButton
-  pageToOpen: 2
+  pageToOpen: 25
 --- !u!224 &1228288829296131722 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5453739835494941988, guid: d1b151138df662b4c8022bfde87d492d, type: 3}
@@ -2284,6 +2405,10 @@ PrefabInstance:
     - target: {fileID: 3414374441582635522, guid: d1b151138df662b4c8022bfde87d492d, type: 3}
       propertyPath: m_Material
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4386347304776073290, guid: d1b151138df662b4c8022bfde87d492d, type: 3}
+      propertyPath: inDelay
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 4493108508571282190, guid: d1b151138df662b4c8022bfde87d492d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -2393,6 +2518,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5960894483950643182, guid: d1b151138df662b4c8022bfde87d492d, type: 3}
+      propertyPath: inDelay
+      value: 0.4
+      objectReference: {fileID: 0}
     - target: {fileID: 6574166199588698962, guid: d1b151138df662b4c8022bfde87d492d, type: 3}
       propertyPath: m_Name
       value: Button (2)
@@ -2426,7 +2555,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11c62894345edcd46bbf4f9624b57498, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SimpleAnimatedUI.OpenPageButton
-  pageToOpen: 13
+  pageToOpen: 15
 --- !u!224 &3527566609243875645 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5453739835494941988, guid: d1b151138df662b4c8022bfde87d492d, type: 3}

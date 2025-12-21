@@ -283,8 +283,8 @@ PrefabInstance:
       value: Button (GoHome)
       objectReference: {fileID: 0}
     - target: {fileID: 6939955288746917464, guid: d1b151138df662b4c8022bfde87d492d, type: 3}
-      propertyPath: m_Material
-      value: 
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7299380546908338451, guid: d1b151138df662b4c8022bfde87d492d, type: 3}
       propertyPath: m_IsActive

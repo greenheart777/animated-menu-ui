@@ -46,6 +46,7 @@ GameObject:
   - component: {fileID: 5739754481073714115}
   - component: {fileID: 732159253846326876}
   - component: {fileID: 2770159495280373380}
+  - component: {fileID: 5409877432131729992}
   m_Layer: 5
   m_Name: Text (TMP) (4)
   m_TagString: Untagged
@@ -171,6 +172,30 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &5409877432131729992
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8550169565927538903}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed2d77a5721c4cc49a6a5fb275c21c2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SimpleAnimatedUI.TextAnimator
+  targetText: {fileID: 2770159495280373380}
+  inStartAlpha: 0
+  inEndAlpha: 1
+  inFadeDuration: 1.2
+  inFadeEase: 2
+  inDelay: 0.2
+  playOnEnable: 0
+  outStartAlpha: 1
+  outEndAlpha: 0
+  outFadeDuration: 1
+  outFadeEase: 2
+  outDelay: 0
 --- !u!1 &8902156677960942761
 GameObject:
   m_ObjectHideFlags: 0
@@ -364,7 +389,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11c62894345edcd46bbf4f9624b57498, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SimpleAnimatedUI.OpenPageButton
-  pageToOpen: 11
+  pageToOpen: 27
 --- !u!1001 &539497680155144160
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -760,7 +785,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11c62894345edcd46bbf4f9624b57498, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SimpleAnimatedUI.OpenPageButton
-  pageToOpen: 11
+  pageToOpen: 28
 --- !u!224 &5808508167407722696 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5453739835494941988, guid: d1b151138df662b4c8022bfde87d492d, type: 3}
@@ -919,7 +944,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11c62894345edcd46bbf4f9624b57498, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SimpleAnimatedUI.OpenPageButton
-  pageToOpen: 11
+  pageToOpen: 30
 --- !u!224 &8915869898585012892 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5453739835494941988, guid: d1b151138df662b4c8022bfde87d492d, type: 3}
@@ -1084,7 +1109,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11c62894345edcd46bbf4f9624b57498, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SimpleAnimatedUI.OpenPageButton
-  pageToOpen: 11
+  pageToOpen: 29
 --- !u!1001 &6503337970595066668
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1365,4 +1390,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11c62894345edcd46bbf4f9624b57498, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SimpleAnimatedUI.OpenPageButton
-  pageToOpen: 11
+  pageToOpen: 26

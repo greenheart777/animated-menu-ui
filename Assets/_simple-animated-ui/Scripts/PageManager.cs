@@ -50,6 +50,8 @@ namespace SimpleAnimatedUI
                     Debug.LogError($"Duplicate PageID: {page.Id}");
                 }
             }
+
+            DOTween.SetTweensCapacity(500, 125);
         }
 
         private void Start()
