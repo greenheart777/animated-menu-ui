@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 namespace SimpleAnimatedUI
 {
-    public class ImageAnimator : MonoBehaviour
+    public class ImageAnimator : MonoBehaviour, IAnimator
     {
         [Header("RequireComponents")]
         [SerializeField] private Image targetImage;
@@ -13,15 +13,15 @@ namespace SimpleAnimatedUI
         [Header("Options")]
         [Range(0f, 1f), SerializeField] private float inStartAlpha = 0f;
         [Range(0f, 1f), SerializeField] private float inEndAlpha = 1f;
-        [Range(0f, 10f), SerializeField] private float inDelay = 0f;
         [Range(0f, 10f), SerializeField] private float inFadeDuration = 1f;
         [SerializeField] private Ease inFadeEase = Ease.InSine;
+        [SerializeField] private float inDelay = 0f;
         [Space]
         [Range(0f, 1f), SerializeField] private float outStartAlpha = 1f;
         [Range(0f, 1f), SerializeField] private float outEndAlpha = 0f;
-        [Range(0f, 10f), SerializeField] private float outDelay = 0f;
         [Range(0f, 10f), SerializeField] private float outFadeDuration = 1f;
         [SerializeField] private Ease outFadeEase = Ease.InSine;
+        [SerializeField] private float outDelay = 0f;
 
         private Tween currentTween;
 
@@ -50,7 +50,7 @@ namespace SimpleAnimatedUI
                 sequence.AppendInterval(inDelay);
             }
 
-            sequence.Join(targetImage.DOFade(inEndAlpha, inFadeDuration).SetEase(inFadeEase));
+            sequence.Append(targetImage.DOFade(inEndAlpha, inFadeDuration).SetEase(inFadeEase));
 
             currentTween = sequence;
             return sequence;
@@ -80,10 +80,19 @@ namespace SimpleAnimatedUI
                 sequence.AppendInterval(outDelay);
             }
 
-            sequence.Join(targetImage.DOFade(outEndAlpha, outFadeDuration).SetEase(outFadeEase));
+            sequence.Append(targetImage.DOFade(outEndAlpha, outFadeDuration).SetEase(outFadeEase));
 
             currentTween = sequence;
             return sequence;
         }
-    } 
+
+        public void KillAnimation()
+        {
+            if (currentTween != null && currentTween.IsActive())
+            {
+                currentTween.Kill();
+                currentTween = null;
+            }
+        }
+    }
 }

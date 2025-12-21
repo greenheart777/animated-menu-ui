@@ -1020,13 +1020,46 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7127672247691679509, guid: 4c5eed72329802c4db8deb2b9b9b02c1, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 334396582962241418}
   m_SourcePrefab: {fileID: 100100000, guid: 4c5eed72329802c4db8deb2b9b9b02c1, type: 3}
 --- !u!224 &1456225213379111447 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3660493024882700662, guid: 4c5eed72329802c4db8deb2b9b9b02c1, type: 3}
   m_PrefabInstance: {fileID: 2808313357814225761}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &4905464785829809268 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7127672247691679509, guid: 4c5eed72329802c4db8deb2b9b9b02c1, type: 3}
+  m_PrefabInstance: {fileID: 2808313357814225761}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &334396582962241418
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4905464785829809268}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3eab7827b58c86541824bf3549e62f23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SimpleAnimatedUI.RectAnimator
+  targetRectTransform: {fileID: 1456225213379111447}
+  inStartPosition: {x: 393.8, y: -40}
+  inEndPosition: {x: -423.5, y: -40}
+  inMoveDuration: 1
+  inMoveEase: 2
+  inDelay: 0
+  outStartPosition: {x: 0, y: 0}
+  outEndPosition: {x: 0, y: 0}
+  outMoveDuration: 1
+  outMoveEase: 2
+  outDelay: 0
+  useAnchoredPosition: 1
+  resetPositionOnAwake: 1
 --- !u!1001 &5711003501471139069
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -2,7 +2,6 @@ using DG.Tweening;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UIElements;
 
 namespace SimpleAnimatedUI
 {
@@ -10,8 +9,16 @@ namespace SimpleAnimatedUI
     {
         public static PageManager Instance;
 
-        [SerializeField] private List<Page> pages;
+        [Header("Components")]
         [SerializeField] private PageEnum startPage;
+        [SerializeField] private List<Page> pages;
+        [Space]
+        [Header("Settings")]
+        [Range(0f, 1f), SerializeField] private float pageFadeInDuration = 0.4f;
+        [SerializeField] private Ease fadeInEase = Ease.InSine;
+        [Space]
+        [Range(0f, 1f), SerializeField] private float pageFadeOutDuration = 0.4f;
+        [SerializeField] private Ease fadeOutEase = Ease.InSine;
 
         private Dictionary<PageEnum, Page> pageMap;
         private Page currentPage;
@@ -34,32 +41,50 @@ namespace SimpleAnimatedUI
             {
                 SetPageActive(page, false);
 
-                if (!pageMap.ContainsKey(page.PageID))
-                    pageMap.Add(page.PageID, page);
+                if (!pageMap.ContainsKey(page.Id))
+                {
+                    pageMap.Add(page.Id, page);
+                }
                 else
-                    Debug.LogError($"Duplicate PageID: {page.PageID}");
+                {
+                    Debug.LogError($"Duplicate PageID: {page.Id}");
+                }
             }
         }
 
         private void Start()
         {
-            OpenPage(startPage);
-        }
+            foreach (var page in pages)
+            {
+                if (page.Id == startPage)
+                {
+                    currentPage = page;
+                }
+            }
 
+            if (currentPage != null)
+            {
+                SetPageActive(currentPage, true);
+            }
+            else
+            {
+                Debug.LogWarning($"[PageManager.Start] currentPage == null");
+            }
+        }
 
 
         public void OpenPage(PageEnum pageID)
         {
             if (!pageMap.TryGetValue(pageID, out var nextPage))
             {
-                Debug.LogWarning($"Page {pageID} not found");
+                Debug.LogWarning($"[PageManager.OpenPage] Page {pageID} not found");
                 return;
             }
-
             if (currentPage == nextPage)
+            {
+                Debug.LogWarning($"[PageManager.OpenPage] CurrentPage == {nextPage}");
                 return;
-
-
+            }
             if (mainSequence != null && mainSequence.IsActive())
             {
                 mainSequence.Kill();
@@ -69,27 +94,35 @@ namespace SimpleAnimatedUI
 
             if (currentPage != null)
             {
+                DisableInteractivity(currentPage);
+
                 mainSequence.Append(GetOutAnimationSequence(currentPage));
 
                 mainSequence.AppendCallback(() =>
                 {
                     SetPageActive(currentPage, false);
+                });
+
+                ShowNextPage(nextPage);
+
+                mainSequence.Append(GetInAnimationSequence(nextPage));
+
+                mainSequence.AppendCallback(() =>
+                {
                     SetPageActive(nextPage, true);
                     currentPage = nextPage;
                 });
 
-                mainSequence.Append(GetInAnimationSequence(nextPage));
+                mainSequence.Play();
             }
             else
             {
-                SetPageActive(nextPage, true);
-                currentPage = nextPage;
-                mainSequence.Append(GetInAnimationSequence(nextPage));
+                Debug.LogError($"Can't found currentPage");
             }
-
-            mainSequence.Play();
         }
 
+
+        #region PageControl
 
         private void SetPageActive(Page page, bool active)
         {
@@ -110,6 +143,22 @@ namespace SimpleAnimatedUI
             group.blocksRaycasts = active;
         }
 
+        private void ShowNextPage(Page page)
+        {
+            page.Header.gameObject.SetActive(true);
+            page.Body.gameObject.SetActive(true);
+        }
+
+        private void DisableInteractivity(Page page)
+        {
+            page.Header.interactable = false;
+            page.Body.interactable = false;
+        }
+
+        #endregion
+
+
+        #region Animations
 
         private Sequence GetOutAnimationSequence(Page page)
         {
@@ -117,8 +166,8 @@ namespace SimpleAnimatedUI
 
             if (page == null) return outSequence;
 
-            ImageAnimator[] headerAnimations = page.Header.GetComponentsInChildren<ImageAnimator>();
-            ImageAnimator[] bodyAnimations = page.Body.GetComponentsInChildren<ImageAnimator>();
+            IAnimator[] headerAnimations = page.Header.GetComponentsInChildren<IAnimator>();
+            IAnimator[] bodyAnimations = page.Body.GetComponentsInChildren<IAnimator>();
 
             foreach (var tweenAnimation in headerAnimations)
             {
@@ -138,7 +187,8 @@ namespace SimpleAnimatedUI
                 }
             }
 
-            //outSequence.Join(page)
+            outSequence.Join(page.Header.DOFade(0f, pageFadeOutDuration)).SetEase(fadeOutEase);
+            outSequence.Join(page.Body.DOFade(0f, pageFadeOutDuration)).SetEase(fadeOutEase);
 
             return outSequence;
         }
@@ -149,8 +199,8 @@ namespace SimpleAnimatedUI
 
             if (page == null) return inSequence;
 
-            ImageAnimator[] headerAnimations = page.Header.GetComponentsInChildren<ImageAnimator>();
-            ImageAnimator[] bodyAnimations = page.Body.GetComponentsInChildren<ImageAnimator>();
+            IAnimator[] headerAnimations = page.Header.GetComponentsInChildren<IAnimator>();
+            IAnimator[] bodyAnimations = page.Body.GetComponentsInChildren<IAnimator>();
 
             foreach (var tweenAnimation in headerAnimations)
             {
@@ -170,7 +220,15 @@ namespace SimpleAnimatedUI
                 }
             }
 
+            page.Header.alpha = 0f;
+            page.Body.alpha = 0f;
+
+            inSequence.Join(page.Header.DOFade(1f, pageFadeInDuration)).SetEase(fadeInEase);
+            inSequence.Join(page.Body.DOFade(1f, pageFadeInDuration)).SetEase(fadeInEase);
+
             return inSequence;
-        }
+        } 
+
+        #endregion
     }
 }

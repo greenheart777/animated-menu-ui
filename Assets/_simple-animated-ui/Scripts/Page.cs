@@ -6,7 +6,7 @@ namespace SimpleAnimatedUI
     [Serializable]
     public class Page
     {
-        public PageEnum PageID;
+        public PageEnum Id;
         public CanvasGroup Header;
         public CanvasGroup Body;
     }

@@ -27,6 +27,12 @@ namespace SimpleAnimatedUI
         KidsClub,
         Embankment,
         Boutiques,
-        HuntingGrounds
+        HuntingGrounds,
+        RestaurantComplex,
+        SteakHouse,
+        RussianRestaurant,
+        JapaneseRestaurant,
+        MediterraneanRestaurant,
+        WellbeingCafe
     } 
 }
