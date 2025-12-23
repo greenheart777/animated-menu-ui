@@ -35,8 +35,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -450.9, y: -112.1}
-  m_SizeDelta: {x: 708, y: 431}
+  m_AnchoredPosition: {x: -457.26, y: -104.7}
+  m_SizeDelta: {x: 720, y: 483}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2940020871966401845
 CanvasRenderer:
@@ -66,7 +66,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: d4349fe43b45f3d4ab9ef42c7cf85943, type: 3}
+  m_Sprite: {fileID: 21300000, guid: afe6ddcfa123205458d74146d8aa765b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -354,6 +354,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6130664649773370315}
     m_Modifications:
+    - target: {fileID: 1978935227184418797, guid: 1984e6a7b03912741add7df8a3bd30aa, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2643010652158186142, guid: 1984e6a7b03912741add7df8a3bd30aa, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -432,6 +436,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2643010652158186142, guid: 1984e6a7b03912741add7df8a3bd30aa, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3015816774947278385, guid: 1984e6a7b03912741add7df8a3bd30aa, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5086775531205645842, guid: 1984e6a7b03912741add7df8a3bd30aa, type: 3}
@@ -696,10 +704,10 @@ PrefabInstance:
       addedObject: {fileID: 3226863877513023944}
     - targetCorrespondingSourceObject: {fileID: 3419684407442800298, guid: a2eafba2c16783d44a54d78d4818b42c, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 2439526523848249679}
+      addedObject: {fileID: 8079661532304541326}
     - targetCorrespondingSourceObject: {fileID: 3419684407442800298, guid: a2eafba2c16783d44a54d78d4818b42c, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 8079661532304541326}
+      addedObject: {fileID: 2439526523848249679}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a2eafba2c16783d44a54d78d4818b42c, type: 3}
 --- !u!224 &6130664649773370315 stripped

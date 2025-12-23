@@ -35,8 +35,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -393.9, y: -86.7}
-  m_SizeDelta: {x: 941, y: 547}
+  m_AnchoredPosition: {x: -385.9, y: -91.8}
+  m_SizeDelta: {x: 960, y: 558}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &530192295964928924
 CanvasRenderer:
@@ -66,7 +66,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 0908975b917bd504ab62e8739d5da1b2, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4e6fe90f86cd84846967031715f80942, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -369,13 +369,49 @@ PrefabInstance:
       value: ImageSlide (0)
       objectReference: {fileID: 0}
     - target: {fileID: 8968986117584725702, guid: 1984e6a7b03912741add7df8a3bd30aa, type: 3}
+      propertyPath: imagesWindowed.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8968986117584725702, guid: 1984e6a7b03912741add7df8a3bd30aa, type: 3}
+      propertyPath: imagesFullscreen.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8968986117584725702, guid: 1984e6a7b03912741add7df8a3bd30aa, type: 3}
       propertyPath: 'imagesWindowed.Array.data[0]'
       value: 
-      objectReference: {fileID: 21300000, guid: 16261e8f5b3f97c49bba70e69334929e, type: 3}
+      objectReference: {fileID: 21300000, guid: a4da12613195ab54190cd329da15b55e, type: 3}
+    - target: {fileID: 8968986117584725702, guid: 1984e6a7b03912741add7df8a3bd30aa, type: 3}
+      propertyPath: 'imagesWindowed.Array.data[1]'
+      value: 
+      objectReference: {fileID: 21300000, guid: 607c78d9af0a67a4ca223e937e588b20, type: 3}
+    - target: {fileID: 8968986117584725702, guid: 1984e6a7b03912741add7df8a3bd30aa, type: 3}
+      propertyPath: 'imagesWindowed.Array.data[2]'
+      value: 
+      objectReference: {fileID: 21300000, guid: e55668b7d8f386540b2297e32e6da9fa, type: 3}
+    - target: {fileID: 8968986117584725702, guid: 1984e6a7b03912741add7df8a3bd30aa, type: 3}
+      propertyPath: 'imagesWindowed.Array.data[3]'
+      value: 
+      objectReference: {fileID: 21300000, guid: d0a48c2c456dde844a34c1046eebf44e, type: 3}
     - target: {fileID: 8968986117584725702, guid: 1984e6a7b03912741add7df8a3bd30aa, type: 3}
       propertyPath: 'imagesFullscreen.Array.data[0]'
       value: 
-      objectReference: {fileID: 21300000, guid: 33b0f295671e12646b472bc64ce8807e, type: 3}
+      objectReference: {fileID: 21300000, guid: 324c10e52226ad4408fce8507d41e9a8, type: 3}
+    - target: {fileID: 8968986117584725702, guid: 1984e6a7b03912741add7df8a3bd30aa, type: 3}
+      propertyPath: 'imagesFullscreen.Array.data[1]'
+      value: 
+      objectReference: {fileID: 21300000, guid: ac9d64b2158166748beff02c02ca4a76, type: 3}
+    - target: {fileID: 8968986117584725702, guid: 1984e6a7b03912741add7df8a3bd30aa, type: 3}
+      propertyPath: 'imagesFullscreen.Array.data[2]'
+      value: 
+      objectReference: {fileID: 21300000, guid: 26558160515da5749ac77110a1a94b60, type: 3}
+    - target: {fileID: 8968986117584725702, guid: 1984e6a7b03912741add7df8a3bd30aa, type: 3}
+      propertyPath: 'imagesFullscreen.Array.data[3]'
+      value: 
+      objectReference: {fileID: 21300000, guid: b6d24003694eb3b4fb530408ec34a7f7, type: 3}
+    - target: {fileID: 8968986117584725702, guid: 1984e6a7b03912741add7df8a3bd30aa, type: 3}
+      propertyPath: 'imagesFullscreen.Array.data[4]'
+      value: 
+      objectReference: {fileID: 21300000, guid: db5489941a71fbf41b3b2dea82277fe7, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
