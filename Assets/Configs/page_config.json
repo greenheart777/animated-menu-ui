@@ -1,0 +1,6 @@
+{
+    "pageFadeInDuration": 0.4,
+    "fadeInEase": "InSine",
+    "pageFadeOutDuration": 0.7,
+    "fadeOutEase": "OutSine"
+}

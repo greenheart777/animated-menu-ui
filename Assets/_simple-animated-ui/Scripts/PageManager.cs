@@ -22,8 +22,12 @@ namespace SimpleAnimatedUI
 
         private Dictionary<PageEnum, Page> pageMap;
         private Page currentPage;
-
         private Sequence mainSequence;
+
+        private float PageFadeInDuration => ConfigManager.Instance?.GetFadeInDuration() ?? 0.4f;
+        private float PageFadeOutDuration => ConfigManager.Instance?.GetFadeOutDuration() ?? 0.4f;
+        private Ease FadeInEase => ConfigManager.Instance?.GetFadeInEase() ?? Ease.InSine;
+        private Ease FadeOutEase => ConfigManager.Instance?.GetFadeOutEase() ?? Ease.InSine;
 
 
         private void Awake()
@@ -52,6 +56,19 @@ namespace SimpleAnimatedUI
             }
 
             DOTween.SetTweensCapacity(500, 125);
+
+            // Убеждаемся, что ConfigManager существует
+            EnsureConfigManager();
+        }
+
+        private void EnsureConfigManager()
+        {
+            if (ConfigManager.Instance == null)
+            {
+                GameObject configManager = new GameObject("ConfigManager");
+                configManager.AddComponent<ConfigManager>();
+                DontDestroyOnLoad(configManager);
+            }
         }
 
         private void Start()
@@ -189,8 +206,9 @@ namespace SimpleAnimatedUI
                 }
             }
 
-            outSequence.Join(page.Header.DOFade(0f, pageFadeOutDuration)).SetEase(fadeOutEase);
-            outSequence.Join(page.Body.DOFade(0f, pageFadeOutDuration)).SetEase(fadeOutEase);
+            // Используем значения из конфига
+            outSequence.Join(page.Header.DOFade(0f, PageFadeOutDuration)).SetEase(FadeOutEase);
+            outSequence.Join(page.Body.DOFade(0f, PageFadeOutDuration)).SetEase(FadeOutEase);
 
             return outSequence;
         }
@@ -225,11 +243,12 @@ namespace SimpleAnimatedUI
             page.Header.alpha = 0f;
             page.Body.alpha = 0f;
 
-            inSequence.Join(page.Header.DOFade(1f, pageFadeInDuration)).SetEase(fadeInEase);
-            inSequence.Join(page.Body.DOFade(1f, pageFadeInDuration)).SetEase(fadeInEase);
+            // Используем значения из конфига
+            inSequence.Join(page.Header.DOFade(1f, PageFadeInDuration)).SetEase(FadeInEase);
+            inSequence.Join(page.Body.DOFade(1f, PageFadeInDuration)).SetEase(FadeInEase);
 
             return inSequence;
-        } 
+        }
 
         #endregion
     }
