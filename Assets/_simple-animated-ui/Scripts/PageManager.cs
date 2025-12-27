@@ -137,8 +137,6 @@ namespace SimpleAnimatedUI
 
             if (currentPage == nextPage)
             {
-                Debug.LogWarning($"[PageManager.OpenPage] CurrentPage == {nextPage}");
-
                 Sequence fadeOut = DOTween.Sequence();
                 fadeOut.Append(currentPage.Header.DOFade(0f, PageFadeOutDuration).SetEase(FadeOutEase));
                 fadeOut.Join(currentPage.Body.DOFade(0f, PageFadeOutDuration).SetEase(FadeOutEase));

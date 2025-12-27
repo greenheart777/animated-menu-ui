@@ -174,7 +174,7 @@ PrefabInstance:
     - target: {fileID: 7812817697325689637, guid: 4c5eed72329802c4db8deb2b9b9b02c1, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: c7d45b9b181d4ca46a2647be796ba60f, type: 3}
+      objectReference: {fileID: 21300000, guid: 65b4905f41ad6864583b38273b0c0eee, type: 3}
     - target: {fileID: 8478335868234472043, guid: 4c5eed72329802c4db8deb2b9b9b02c1, type: 3}
       propertyPath: inFadeEase
       value: 3

@@ -92,10 +92,34 @@ PrefabInstance:
       propertyPath: m_Name
       value: Button (Void)
       objectReference: {fileID: 0}
+    - target: {fileID: 2499484644832947499, guid: 76b5ae47eca57af4993e9f152edcc4f5, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 215
+      objectReference: {fileID: 0}
+    - target: {fileID: 2499484644832947499, guid: 76b5ae47eca57af4993e9f152edcc4f5, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 107.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2649457907179060588, guid: 76b5ae47eca57af4993e9f152edcc4f5, type: 3}
+      propertyPath: pageToOpen
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 3541278824641082314, guid: 76b5ae47eca57af4993e9f152edcc4f5, type: 3}
       propertyPath: m_text
       value: "<color=#D5D1CB>\u0418\u043D\u0444\u0440\u0430\u0441\u0442\u0440\u0443\u043A\u0442\u0443\u0440\u0430
         |</color> \u041F\u043B\u044F\u0436\u043D\u044B\u0439 \u043A\u043B\u0443\u0431"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4296981249774635538, guid: 76b5ae47eca57af4993e9f152edcc4f5, type: 3}
+      propertyPath: pageToOpen
+      value: 19
+      objectReference: {fileID: 0}
+    - target: {fileID: 5506959807788423352, guid: 76b5ae47eca57af4993e9f152edcc4f5, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 206.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5506959807788423352, guid: 76b5ae47eca57af4993e9f152edcc4f5, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -103.35
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

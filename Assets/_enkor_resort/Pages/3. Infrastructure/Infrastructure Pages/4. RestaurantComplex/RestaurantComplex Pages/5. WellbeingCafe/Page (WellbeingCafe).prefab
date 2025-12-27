@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5357765917047640731}
   - component: {fileID: 335441030480303429}
   - component: {fileID: 1641334233803779459}
+  - component: {fileID: 7253447057751191175}
   m_Layer: 5
   m_Name: Dot
   m_TagString: Untagged
@@ -75,6 +76,30 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &7253447057751191175
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 45311133245747663}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a09289715db6ad4a93d404ab7c5817b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SimpleAnimatedUI.ImageAnimator
+  targetImage: {fileID: 1641334233803779459}
+  playOnEnable: 1
+  inStartAlpha: 0
+  inEndAlpha: 1
+  inFadeDuration: 1
+  inFadeEase: 2
+  inDelay: 0.7
+  outStartAlpha: 1
+  outEndAlpha: 0
+  outFadeDuration: 1
+  outFadeEase: 3
+  outDelay: 0
 --- !u!1 &325028111127527675
 GameObject:
   m_ObjectHideFlags: 0
@@ -86,6 +111,7 @@ GameObject:
   - component: {fileID: 1271413312939297359}
   - component: {fileID: 1277378949189984694}
   - component: {fileID: 6388481749685447269}
+  - component: {fileID: 1167855940919763468}
   m_Layer: 5
   m_Name: Text (TMP) (4)
   m_TagString: Untagged
@@ -220,6 +246,30 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &1167855940919763468
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 325028111127527675}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed2d77a5721c4cc49a6a5fb275c21c2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SimpleAnimatedUI.TextAnimator
+  targetText: {fileID: 6388481749685447269}
+  playOnEnable: 0
+  inStartAlpha: 0
+  inEndAlpha: 1
+  inFadeDuration: 1.2
+  inFadeEase: 2
+  inDelay: 0.7
+  outStartAlpha: 1
+  outEndAlpha: 0
+  outFadeDuration: 1
+  outFadeEase: 2
+  outDelay: 0
 --- !u!1 &2037891894816337114
 GameObject:
   m_ObjectHideFlags: 0
@@ -231,6 +281,7 @@ GameObject:
   - component: {fileID: 8678047704803625495}
   - component: {fileID: 1800813556371923866}
   - component: {fileID: 7120452574654002651}
+  - component: {fileID: 6585933351886388319}
   m_Layer: 5
   m_Name: Text (TMP) (6)
   m_TagString: Untagged
@@ -358,6 +409,30 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &6585933351886388319
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2037891894816337114}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed2d77a5721c4cc49a6a5fb275c21c2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SimpleAnimatedUI.TextAnimator
+  targetText: {fileID: 7120452574654002651}
+  playOnEnable: 0
+  inStartAlpha: 0
+  inEndAlpha: 1
+  inFadeDuration: 1.2
+  inFadeEase: 2
+  inDelay: 0.9
+  outStartAlpha: 1
+  outEndAlpha: 0
+  outFadeDuration: 1
+  outFadeEase: 2
+  outDelay: 0
 --- !u!1 &2476845810845178775
 GameObject:
   m_ObjectHideFlags: 0
@@ -369,6 +444,7 @@ GameObject:
   - component: {fileID: 8158677439422036406}
   - component: {fileID: 5444468783368458886}
   - component: {fileID: 1580104605989605382}
+  - component: {fileID: 5425183017425366666}
   m_Layer: 5
   m_Name: Text (TMP) (5)
   m_TagString: Untagged
@@ -499,6 +575,30 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &5425183017425366666
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2476845810845178775}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed2d77a5721c4cc49a6a5fb275c21c2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SimpleAnimatedUI.TextAnimator
+  targetText: {fileID: 1580104605989605382}
+  playOnEnable: 0
+  inStartAlpha: 0
+  inEndAlpha: 1
+  inFadeDuration: 1.2
+  inFadeEase: 2
+  inDelay: 0.8
+  outStartAlpha: 1
+  outEndAlpha: 0
+  outFadeDuration: 1
+  outFadeEase: 2
+  outDelay: 0
 --- !u!1 &3497117257501086227
 GameObject:
   m_ObjectHideFlags: 0
@@ -510,6 +610,7 @@ GameObject:
   - component: {fileID: 7614576649448044321}
   - component: {fileID: 262216201891820370}
   - component: {fileID: 1941980349668203542}
+  - component: {fileID: 1981704439764314152}
   m_Layer: 5
   m_Name: Text (TMP) (2)
   m_TagString: Untagged
@@ -641,6 +742,30 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &1981704439764314152
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3497117257501086227}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed2d77a5721c4cc49a6a5fb275c21c2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SimpleAnimatedUI.TextAnimator
+  targetText: {fileID: 1941980349668203542}
+  playOnEnable: 0
+  inStartAlpha: 0
+  inEndAlpha: 1
+  inFadeDuration: 1.2
+  inFadeEase: 2
+  inDelay: 0.5
+  outStartAlpha: 1
+  outEndAlpha: 0
+  outFadeDuration: 1
+  outFadeEase: 2
+  outDelay: 0
 --- !u!1 &5608168192188135711
 GameObject:
   m_ObjectHideFlags: 0
@@ -652,6 +777,7 @@ GameObject:
   - component: {fileID: 1213587415740763503}
   - component: {fileID: 5701161795874397391}
   - component: {fileID: 3377416872963877313}
+  - component: {fileID: 1890628266083868826}
   m_Layer: 5
   m_Name: Dot
   m_TagString: Untagged
@@ -716,6 +842,30 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &1890628266083868826
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5608168192188135711}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a09289715db6ad4a93d404ab7c5817b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SimpleAnimatedUI.ImageAnimator
+  targetImage: {fileID: 3377416872963877313}
+  playOnEnable: 1
+  inStartAlpha: 0
+  inEndAlpha: 1
+  inFadeDuration: 1
+  inFadeEase: 2
+  inDelay: 0.8
+  outStartAlpha: 1
+  outEndAlpha: 0
+  outFadeDuration: 1
+  outFadeEase: 3
+  outDelay: 0
 --- !u!1 &6118320497286465844
 GameObject:
   m_ObjectHideFlags: 0
@@ -727,6 +877,7 @@ GameObject:
   - component: {fileID: 9205148685046027084}
   - component: {fileID: 6128114833775003013}
   - component: {fileID: 2649058482058950528}
+  - component: {fileID: 1168139651175580738}
   m_Layer: 5
   m_Name: Text (TMP) (3)
   m_TagString: Untagged
@@ -854,6 +1005,30 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &1168139651175580738
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6118320497286465844}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed2d77a5721c4cc49a6a5fb275c21c2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SimpleAnimatedUI.TextAnimator
+  targetText: {fileID: 2649058482058950528}
+  playOnEnable: 0
+  inStartAlpha: 0
+  inEndAlpha: 1
+  inFadeDuration: 1.2
+  inFadeEase: 2
+  inDelay: 0.6
+  outStartAlpha: 1
+  outEndAlpha: 0
+  outFadeDuration: 1
+  outFadeEase: 2
+  outDelay: 0
 --- !u!1 &6475730537295140183
 GameObject:
   m_ObjectHideFlags: 0
@@ -904,6 +1079,7 @@ GameObject:
   - component: {fileID: 6960374564073335980}
   - component: {fileID: 6197980843978047904}
   - component: {fileID: 6988337755651028118}
+  - component: {fileID: 3883831611619384552}
   m_Layer: 5
   m_Name: Dot
   m_TagString: Untagged
@@ -968,6 +1144,30 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &3883831611619384552
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7420920008240416088}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a09289715db6ad4a93d404ab7c5817b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SimpleAnimatedUI.ImageAnimator
+  targetImage: {fileID: 6988337755651028118}
+  playOnEnable: 1
+  inStartAlpha: 0
+  inEndAlpha: 1
+  inFadeDuration: 1
+  inFadeEase: 2
+  inDelay: 0.9
+  outStartAlpha: 1
+  outEndAlpha: 0
+  outFadeDuration: 1
+  outFadeEase: 3
+  outDelay: 0
 --- !u!1 &8800361695368893113
 GameObject:
   m_ObjectHideFlags: 0
@@ -979,6 +1179,7 @@ GameObject:
   - component: {fileID: 6184191141674398686}
   - component: {fileID: 981324960517368266}
   - component: {fileID: 8108173625071065470}
+  - component: {fileID: 5957241477711332999}
   m_Layer: 5
   m_Name: Dot
   m_TagString: Untagged
@@ -1043,6 +1244,30 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &5957241477711332999
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8800361695368893113}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a09289715db6ad4a93d404ab7c5817b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SimpleAnimatedUI.ImageAnimator
+  targetImage: {fileID: 8108173625071065470}
+  playOnEnable: 1
+  inStartAlpha: 0
+  inEndAlpha: 1
+  inFadeDuration: 1
+  inFadeEase: 2
+  inDelay: 0.6
+  outStartAlpha: 1
+  outEndAlpha: 0
+  outFadeDuration: 1
+  outFadeEase: 3
+  outDelay: 0
 --- !u!1 &9141074501167765398
 GameObject:
   m_ObjectHideFlags: 0
@@ -1193,12 +1418,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SimpleAnimatedUI.TextAnimator
   targetText: {fileID: 7737090742663836216}
+  playOnEnable: 0
   inStartAlpha: 0
   inEndAlpha: 1
   inFadeDuration: 1.2
   inFadeEase: 2
   inDelay: 0.2
-  playOnEnable: 0
   outStartAlpha: 1
   outEndAlpha: 0
   outFadeDuration: 1

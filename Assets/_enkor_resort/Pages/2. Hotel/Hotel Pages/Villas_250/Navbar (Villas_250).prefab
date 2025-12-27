@@ -213,9 +213,25 @@ PrefabInstance:
       propertyPath: m_Name
       value: Button (Void)
       objectReference: {fileID: 0}
+    - target: {fileID: 2649457907179060588, guid: 76b5ae47eca57af4993e9f152edcc4f5, type: 3}
+      propertyPath: pageToOpen
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 3541278824641082314, guid: 76b5ae47eca57af4993e9f152edcc4f5, type: 3}
       propertyPath: m_text
       value: "<color=#D5D1CB>\u0412\u0438\u043B\u043B\u044B |</color> 250"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4296981249774635538, guid: 76b5ae47eca57af4993e9f152edcc4f5, type: 3}
+      propertyPath: pageToOpen
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 5506959807788423352, guid: 76b5ae47eca57af4993e9f152edcc4f5, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 5506959807788423352, guid: 76b5ae47eca57af4993e9f152edcc4f5, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -30
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

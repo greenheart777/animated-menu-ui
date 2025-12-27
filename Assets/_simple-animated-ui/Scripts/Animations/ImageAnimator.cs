@@ -8,7 +8,7 @@ namespace SimpleAnimatedUI
     {
         [Header("RequireComponents")]
         [SerializeField] private Image targetImage;
-
+        [SerializeField] private bool playOnEnable = false;
 
         [Header("Options")]
         [Range(0f, 1f), SerializeField] private float inStartAlpha = 0f;
@@ -25,6 +25,19 @@ namespace SimpleAnimatedUI
 
         private Tween currentTween;
 
+
+        private void OnEnable()
+        {
+            if (playOnEnable)
+            {
+                GetInAnimation()?.Play();
+            }
+        }
+
+        private void OnDisable()
+        {
+            KillAnimation();
+        }
 
         public Tween GetInAnimation()
         {

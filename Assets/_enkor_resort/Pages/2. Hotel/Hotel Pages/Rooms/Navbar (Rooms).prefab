@@ -213,6 +213,18 @@ PrefabInstance:
       propertyPath: m_text
       value: "<color=#D5D1CB>\u041E\u0442\u0435\u043B\u044C |</color> \u041D\u043E\u043C\u0435\u0440\u0430"
       objectReference: {fileID: 0}
+    - target: {fileID: 4296981249774635538, guid: 76b5ae47eca57af4993e9f152edcc4f5, type: 3}
+      propertyPath: pageToOpen
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5506959807788423352, guid: 76b5ae47eca57af4993e9f152edcc4f5, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 105.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5506959807788423352, guid: 76b5ae47eca57af4993e9f152edcc4f5, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -52.6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

@@ -8,6 +8,7 @@ namespace SimpleAnimatedUI
     {
         [Header("RequireComponents")]
         [SerializeField] private TMP_Text targetText;
+        [SerializeField] private bool playOnEnable = false;
 
         [Header("In Animation")]
         [Range(0f, 1f), SerializeField] private float inStartAlpha = 0f;
@@ -15,7 +16,6 @@ namespace SimpleAnimatedUI
         [Range(0f, 10f), SerializeField] private float inFadeDuration = 1f;
         [SerializeField] private Ease inFadeEase = Ease.InSine;
         [SerializeField] private float inDelay = 0f;
-        [SerializeField] private bool playOnEnable = false;
 
         [Header("Out Animation")]
         [Range(0f, 1f), SerializeField] private float outStartAlpha = 1f;
@@ -25,6 +25,14 @@ namespace SimpleAnimatedUI
         [SerializeField] private float outDelay = 0f;
 
         private Tween currentTween;
+
+        private void OnEnable()
+        {
+            if (playOnEnable)
+            {
+                GetInAnimation()?.Play();
+            }
+        }
 
         private void OnDisable()
         {
